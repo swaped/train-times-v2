@@ -81,8 +81,8 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen h-screen bg-gray-600 flex flex-col items-center justify-start py-10 px-4">
-      <h1 className="font-bold mb-6 uppercase">Live Departures</h1>
+    <div className="min-h-screen h-screen w-screen bg-gray-600 flex flex-col items-center justify-start py-10 px-4">
+      <h1 className="font-bold mb-6 uppercase text-2xl">Live Departures</h1>
       <form
         onSubmit={fetchDepartures}
         className="flex flex-col items-center gap-4 w-full max-w-md bg-gray-800 p-6 rounded shadow"
@@ -127,12 +127,14 @@ function Home() {
       {error && <div className="text-red-600 mt-4">{error}</div>}
       {departures.length > 0 && (
         <div className="platform-board">
-          <h2>Departures: {station.toUpperCase()}</h2>
+          <h2>
+            Departures:{" "}
+            <span className="text-yellow-400">{station.toUpperCase()}</span>
+          </h2>
           {departures.map((group, idx) => (
             <div key={group.platform || idx} style={{ marginBottom: "2rem" }}>
               <div
                 style={{
-                  color: "#ffe600",
                   fontWeight: "bold",
                   fontSize: "1.2rem",
                   marginBottom: "0.5rem",
