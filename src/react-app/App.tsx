@@ -81,11 +81,11 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen h-screen bg-red-100 flex flex-col items-center justify-start py-10 px-4 bg-red-50">
-      <h1 className="font-bold mb-6">Live Departures</h1>
+    <div className="min-h-screen h-screen bg-gray-600 flex flex-col items-center justify-start py-10 px-4">
+      <h1 className="font-bold mb-6 uppercase">Live Departures</h1>
       <form
         onSubmit={fetchDepartures}
-        className="flex flex-col items-center gap-4 w-full max-w-md bg-white p-6 rounded shadow"
+        className="flex flex-col items-center gap-4 w-full max-w-md bg-gray-800 p-6 rounded shadow"
       >
         <div className="relative w-full">
           <input
@@ -102,11 +102,11 @@ function Home() {
             required
           />
           {showSuggestions && (
-            <ul className="absolute z-10 left-0 right-0 bg-white border border-gray-300 rounded mt-1 max-h-56 overflow-y-auto shadow-lg">
+            <ul className="absolute z-10 left-0 right-0 bg-black border border-gray-300 rounded mt-1 max-h-56 overflow-y-auto shadow-lg">
               {suggestions.map((s) => (
                 <li
                   key={s.crsCode}
-                  className="px-3 py-2 cursor-pointer hover:bg-blue-100 flex justify-between"
+                  className="px-3 py-2 cursor-pointer hover:bg-blue-800 flex justify-between"
                   onMouseDown={() => handleSuggestionClick(s)}
                 >
                   <span>{s.stationName}</span>
@@ -121,7 +121,7 @@ function Home() {
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
           disabled={loading}
         >
-          {loading ? "Loading..." : "Get Next 3 Departures"}
+          {loading ? "Loading..." : "Get Next Departures"}
         </button>
       </form>
       {error && <div className="text-red-600 mt-4">{error}</div>}
