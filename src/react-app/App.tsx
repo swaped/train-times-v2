@@ -127,7 +127,7 @@ function Home() {
       {error && <div className="text-red-600 mt-4">{error}</div>}
       {departures.length > 0 && (
         <div className="platform-board">
-          <h2>Departures</h2>
+          <h2>Departures: {station.toUpperCase()}</h2>
           {departures.map((group, idx) => (
             <div key={group.platform || idx} style={{ marginBottom: "2rem" }}>
               <div
@@ -153,7 +153,11 @@ function Home() {
                     <tr key={group.platform + "-" + i}>
                       <td>{dep.time}</td>
                       <td>{dep.destination}</td>
-                      <td className="status">{dep.status}</td>
+                      <td
+                        className={`${dep.status === "Delayed" || dep.status === "Cancelled" ? "status--delayed" : "status"}`}
+                      >
+                        {dep.status}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

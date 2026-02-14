@@ -34,8 +34,8 @@
 }
 
 .departures-table th {
-  color: #ffe600;
-  border-bottom: 2px solid #ffe600;
+  color: #898989;
+  border-bottom: 2px solid #535353;
   background: #222;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -56,8 +56,13 @@
 
 .departures-table .status {
   font-weight: bold;
-  color: #ffe600;
-  text-shadow: 0 0 4px #ffe60088;
+  color: #006529;
+  text-shadow: 0 0 4px #00653d88;
+}
+
+.departures-table .status--delayed {
+  color: #ff4d4d;
+  text-shadow: 0 0 4px #ff4d4d88;
 }
 
 @media (max-width: 600px) {
