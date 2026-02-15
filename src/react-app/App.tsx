@@ -81,7 +81,7 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen h-screen w-screen bg-gray-600 flex flex-col items-center justify-start py-10 px-4">
+    <div className="min-h-screen w-screen bg-gray-600 flex flex-col items-center justify-start py-10 px-4">
       <h1 className="font-bold mb-6 uppercase text-2xl">Live Departures</h1>
       <form
         onSubmit={fetchDepartures}
@@ -91,7 +91,7 @@ function Home() {
           <input
             id="station-name"
             type="text"
-            className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 text-amber-100"
             placeholder="Enter station name or code (e.g. EUS)"
             value={station}
             onChange={(e) => setStation(e.target.value)}
@@ -136,8 +136,9 @@ function Home() {
               <div
                 style={{
                   fontWeight: "bold",
-                  fontSize: "1.2rem",
+                  fontSize: "1rem",
                   marginBottom: "0.5rem",
+                  color: "#fbbf24",
                 }}
               >
                 Platform {group.platform}
