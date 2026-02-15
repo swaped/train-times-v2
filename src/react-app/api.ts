@@ -21,7 +21,7 @@ export async function fetchLiveDepartures(
 ): Promise<PlatformDepartures[]> {
   const code = crs.trim().toUpperCase();
   const res = await fetch(`/api/departures/${encodeURIComponent(code)}`);
-  if (!res.ok) throw new Error("API error");
+  if (!res.ok) throw new Error(`Failed to fetch departures: ${res.statusText}`);
 
   return (await res.json()) as PlatformDepartures[];
 }

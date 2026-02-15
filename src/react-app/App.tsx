@@ -91,7 +91,7 @@ function Home() {
           <input
             id="station-name"
             type="text"
-            className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 text-amber-100"
+            className="border border-gray-300 px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 text-amber-100 rounded-lg"
             placeholder="Enter station name or code (e.g. EUS)"
             value={station}
             onChange={(e) => setStation(e.target.value)}
